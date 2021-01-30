@@ -7,7 +7,7 @@ public class HelloApp {
 //      load spring config file
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 //      retrieve bean
-        Coach c1 = context.getBean("MyCoach", Coach.class);
+        Coach c1 = context.getBean("Coach1", Coach.class);
 //      call method
         System.out.println(c1.getDailyWorkout());
 //      close context

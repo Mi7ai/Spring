@@ -8,7 +8,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <bean id="MyCoach" class="pack1.BaseballCoach">
+    <bean id="Coach1" class="pack1.BaseballCoach">
     </bean>
 </beans>
 
