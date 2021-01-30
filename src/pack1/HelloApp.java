@@ -12,7 +12,5 @@ public class HelloApp {
         System.out.println(c1.getDailyWorkout());
 //      close context
         context.close();
-
-
     }
 }
