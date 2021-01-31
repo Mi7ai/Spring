@@ -10,16 +10,19 @@
     <!-- Define your beans here -->
 <!--    lazy init only calls this bean when called from main class. Otherwise it will create all in memory-->
     <bean id="Coach1" class="pack1.TrackCoach" lazy-init="true">
-        <!--        constructor injection-->
-        <constructor-arg ref="Fortune1">
+<!--        constructor injection-->
+        <constructor-arg ref="Fortune1"/>
 
-        </constructor-arg>
     </bean>
+
     <bean id="Coach2" class="pack1.CricketCoach" lazy-init="true">
-        <property name="Fs" ref="Fortune1">
-
-        </property>
+<!--        set up setter injection-->
+        <property name="Fs" ref="Fortune1"/>
+<!--        inject literal values-->
+        <property name="email" value="thebestcricketcoach@gmail.com"/>
+        <property name="team" value="sunrised"/>
     </bean>
+
     <bean id="Fortune1" class="pack1.HappyFortuneService">
 
     </bean>

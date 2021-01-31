@@ -12,6 +12,8 @@ public class SetterCoachApp {
         System.out.println(c1.getDailyWorkout());
         System.out.println(c1.getDailyFortune());
 
+        System.out.println(c1.getEmail());
+        System.out.println(c1.getTeam());
 
         context.close();
 
