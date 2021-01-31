@@ -4,16 +4,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class GeneralCoachApp {
     public static void main(String[] args) {
-//      load spring config file
+//        load spring config file
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-//      retrieve bean
+//        retrieve bean
         Coach c1 = context.getBean("Coach1", Coach.class);
-//      call method
+//        call method 1
         System.out.println(c1.getDailyWorkout());
-
+//        call method 2
         System.out.println(c1.getDailyFortune());
 
-//      close context
+//        close context
         context.close();
+
     }
 }
