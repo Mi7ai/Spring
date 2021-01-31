@@ -8,16 +8,23 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <bean id="Coach1" class="pack1.TrackCoach">
+<!--    lazy init only calls this bean when called from main class. Otherwise it will create all in memory-->
+    <bean id="Coach1" class="pack1.TrackCoach" lazy-init="true">
         <!--        constructor injection-->
         <constructor-arg ref="Fortune1">
 
         </constructor-arg>
     </bean>
+    <bean id="Coach2" class="pack1.CricketCoach" lazy-init="true">
+        <property name="Fs" ref="Fortune1">
 
+        </property>
+    </bean>
     <bean id="Fortune1" class="pack1.HappyFortuneService">
 
     </bean>
+
+
 </beans>
 
 
