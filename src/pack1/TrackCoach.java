@@ -6,13 +6,13 @@ public class TrackCoach implements Coach {
     public TrackCoach() {
     }
 
-    public TrackCoach(FortuneService _fs) {
-        this.fs = _fs;
+    public TrackCoach(FortuneService fs) {
+        this.fs = fs;
     }
 
     @Override
     public String getDailyWorkout() {
-        return "Run a hard 5k";
+        return "Track: Run a hard 5k";
     }
 
     @Override

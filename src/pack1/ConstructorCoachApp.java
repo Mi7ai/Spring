@@ -2,7 +2,7 @@ package pack1;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class GeneralCoachApp {
+public class ConstructorCoachApp {
     public static void main(String[] args) {
 //        load spring config file
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
