@@ -1,6 +1,6 @@
 package pack1;
 
-public class MyApp {
+public class MyCoachApp1 {
 
 	public static void main(String[] args) {
 //		this is hardcoded

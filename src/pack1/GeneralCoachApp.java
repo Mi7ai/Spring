@@ -2,7 +2,7 @@ package pack1;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloApp {
+public class GeneralCoachApp {
     public static void main(String[] args) {
 //      load spring config file
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -10,6 +10,9 @@ public class HelloApp {
         Coach c1 = context.getBean("Coach1", Coach.class);
 //      call method
         System.out.println(c1.getDailyWorkout());
+
+        System.out.println(c1.getDailyFortune());
+
 //      close context
         context.close();
     }
