@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     <!--Define properties file-->
-    <context:property-placeholder location="classpath:sport.properties"/>
+    <context:property-placeholder location="file:applicationContextPack1/sport.properties"/>
     <!-- Define your beans here -->
 <!--    lazy init only calls this bean when called from main class. Otherwise it will create all in memory-->
     <bean id="Coach1" class="pack1.TrackCoach" lazy-init="true">

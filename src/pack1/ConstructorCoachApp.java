@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ConstructorCoachApp {
     public static void main(String[] args) {
 //        load spring config file
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("file:applicationContextPack1/applicationContext.xml");
 //        retrieve bean
         Coach c1 = context.getBean("Coach1", Coach.class);
 //        call method 1

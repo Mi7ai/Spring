@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ScopeCoachApp {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContextScope.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("file:applicationContextPack1/applicationContextScope.xml");
 //        two different instances of coach
         Coach c3 = context.getBean("Coach1", Coach.class);
 
