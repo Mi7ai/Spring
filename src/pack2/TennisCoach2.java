@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach2 implements Coach {
     final String className;
+    private FortuneService fs;
 
     public TennisCoach2() {
         className = this.getClass().getName();
@@ -16,5 +17,10 @@ public class TennisCoach2 implements Coach {
     @Override
     public String getDailyWorkout() {
         return className + ": Practice your backhand volley";
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return fs.getFortune();
     }
 }

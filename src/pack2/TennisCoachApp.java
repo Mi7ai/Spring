@@ -9,7 +9,8 @@ public class TennisCoachApp {
         Coach c1 = context.getBean("tennisCoach", Coach.class);
 
         System.out.println(c1.getDailyWorkout());
-
+//        this print is handled by Spring with annotations and not by the xml file
+        System.out.println(c1.getDailyFortune());
         context.close();
     }
 }
