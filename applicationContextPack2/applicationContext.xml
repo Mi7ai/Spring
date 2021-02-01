@@ -6,17 +6,12 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- Define your beans here -->
-<!--    lazy init only calls this bean when called from main class. Otherwise it will create all in memory-->
-    <bean id="Coach1" class="pack1.TrackCoach" lazy-init="true" scope="prototype">
-<!--        constructor injection-->
-        <constructor-arg ref="Fortune1"/>
-    </bean>
+    <!--Define properties file-->
+<!--    #######################################-->
 
-    <bean id="Fortune1" class="pack1.HappyFortuneService">
 
-    </bean>
-
+<!--    enable component scanning-->
+    <context:component-scan base-package="pack2"/>
 
 </beans>
 
