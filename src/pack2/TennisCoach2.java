@@ -1,10 +1,12 @@
 package pack2;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 //this id for the xml is the name of the class with the first letter lower case.
 //this is called implicit bean id
-@Component
+@Component("tennisCoach2")
+@Lazy
 public class TennisCoach2 implements Coach {
     final String className;
     private FortuneService fs;
