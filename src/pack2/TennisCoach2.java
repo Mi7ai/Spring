@@ -1,14 +1,17 @@
 package pack2;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 //this id for the xml is the name of the class with the first letter lower case.
 //this is called implicit bean id
-@Component("tennisCoach2")
+@Component
 @Lazy
 public class TennisCoach2 implements Coach {
     final String className;
+//    field injection. no need for setter or constructor injection
+    @Autowired
     private FortuneService fs;
 
     public TennisCoach2() {

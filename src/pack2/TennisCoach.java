@@ -15,7 +15,7 @@ public class TennisCoach implements Coach {
         className = this.getClass().getName();
         System.out.println(className + ": inside default constructor");
     }
-
+//i can change the method name but keep the annotation
     @Autowired
     public void setFs(FortuneService fs) {
         this.fs = fs;
