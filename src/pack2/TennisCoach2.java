@@ -1,6 +1,7 @@
 package pack2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -8,10 +9,12 @@ import org.springframework.stereotype.Component;
 //this is called implicit bean id
 @Component
 @Lazy
+
 public class TennisCoach2 implements Coach {
     final String className;
 //    field injection. no need for setter or constructor injection
     @Autowired
+    @Qualifier("randomFortuneService")
     private FortuneService fs;
 
     public TennisCoach2() {
