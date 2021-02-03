@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-//constructor injection
+//property file injection
 @Component
 public class SwimCoach implements Coach {
     @Autowired

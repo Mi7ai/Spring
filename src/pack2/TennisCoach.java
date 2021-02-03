@@ -3,11 +3,13 @@ package pack2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //this is the id from the xml
 @Component
 @Lazy
+@Scope("prototype")
 public class TennisCoach implements Coach {
     final String className;
 //    if more than one FortuneService is present i specify it with @Qualifier
