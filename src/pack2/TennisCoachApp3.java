@@ -6,9 +6,9 @@ public class TennisCoachApp3 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("file:applicationContextPack2/applicationContext.xml");
 
-        Coach c1 = context.getBean("tennisCoach", Coach.class);
+        Coach c1 = context.getBean("tennisCoach2", Coach.class);
 
-        Coach c2 = context.getBean("tennisCoach", Coach.class);
+        Coach c2 = context.getBean("tennisCoach2", Coach.class);
 
         boolean res = c1 == c2;
 
