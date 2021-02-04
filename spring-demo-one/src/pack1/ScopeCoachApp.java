@@ -14,5 +14,7 @@ public class ScopeCoachApp {
         System.out.println(res);
         System.out.println("Memory location c3"+ c3);
         System.out.println("Memory location c4"+ c4);
+        
+        context.close();
     }
 }
