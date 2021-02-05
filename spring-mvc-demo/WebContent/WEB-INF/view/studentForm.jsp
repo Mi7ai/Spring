@@ -7,20 +7,17 @@
 <body>
 	<h2>Hi Show Name - Form</h2>
 	<form:form action="processForm" modelAttribute="student" method="get">
-		<!-- 		firstName is a property of Student class -->
+		<!-- 		firstName is the name of the get method of Student class -->
 		First Name: <form:input path="firstName" />
 		<br/>
-		<!-- 		lastName is a property of Student class -->
+		<!-- 		lastName is the name of the get method of Student class -->
 		Last Name: <form:input path="lastName" />
 		<br/>
 		
 		Country: 
 <!-- 		on submit it will call student.setCountry from Student class -->
 		<form:select path="country">
-			<form:option value="Brazil"  label="Brazil"/>
-			<form:option value="France"  label="France"/>
-			<form:option value="Norway"  label="Norway"/>
-			<form:option value="Romania" label="Romania"/>
+			<form:options items="${student.countryOptions}"/>
 		</form:select>
 		<br/>
 		<input type="submit" name="Submit" value="Submit" />

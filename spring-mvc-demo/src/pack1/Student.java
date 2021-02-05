@@ -1,12 +1,20 @@
 package pack1;
 
+import java.util.HashMap;
+
 public class Student {
 	private String firstName;
 	private String lastName;
 	private String country;
-
+	private HashMap<String, String> countryOptions;
+	 
+	
 	public Student () {
-
+		this.countryOptions = new HashMap<String, String>();
+		countryOptions.put("BR", "Brazil");
+		countryOptions.put("FR", "France");
+		countryOptions.put("NR", "Norway");
+		countryOptions.put("RO", "Romania");
 	}
 
 	public Student(String firstName, String lastName) {
@@ -39,4 +47,13 @@ public class Student {
 		this.country = country;
 	}
 
+	public HashMap<String, String> getCountryOptions() {
+		return countryOptions;
+	}
+
+	public void setCountryOptions(HashMap<String, String> countryOptions) {
+		this.countryOptions = countryOptions;
+	}
+
+	
 }
