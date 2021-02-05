@@ -50,7 +50,7 @@ public class Student {
 	public HashMap<String, String> getCountryOptions() {
 		return countryOptions;
 	}
-
+//not needed for setting because i do it in the constructor
 	public void setCountryOptions(HashMap<String, String> countryOptions) {
 		this.countryOptions = countryOptions;
 	}
