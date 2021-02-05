@@ -4,9 +4,9 @@
 </head>
 <body>
 	<h2>Hi Process Name - Form</h2>
-	 Student name: ${param.studentName }
-	 <br/>
-	 <!-- this come from model-->
-	 The message: ${message}
+	<!-- this come from model-->
+	 <p>Student name 1: ${param.studentName}</p>
+	 <p>Student name 2: ${messageStudentName2}</p>
+	 <p>Student name 3: ${messageStudentName3}</p>
 </body>
 </html>
