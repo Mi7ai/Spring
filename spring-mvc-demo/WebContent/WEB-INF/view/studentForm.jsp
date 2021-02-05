@@ -12,6 +12,17 @@
 		<br/>
 		<!-- 		lastName is a property of Student class -->
 		Last Name: <form:input path="lastName" />
+		<br/>
+		
+		Country: 
+<!-- 		on submit it will call student.setCountry from Student class -->
+		<form:select path="country">
+			<form:option value="Brazil"  label="Brazil"/>
+			<form:option value="France"  label="France"/>
+			<form:option value="Norway"  label="Norway"/>
+			<form:option value="Romania" label="Romania"/>
+		</form:select>
+		<br/>
 		<input type="submit" name="Submit" value="Submit" />
 	</form:form>
 

@@ -7,7 +7,7 @@
 <body>
 	<h2>Student Page</h2>
 	<p>Student: ${student.firstName} ${student.lastName}</p>
-
+	<p>Country: ${student.country}</p>
 
 </body>
 </html>
