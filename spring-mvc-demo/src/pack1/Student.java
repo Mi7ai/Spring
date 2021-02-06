@@ -1,13 +1,16 @@
 package pack1;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Student {
 	private String firstName;
 	private String lastName;
 	private String country;
+	private String programmingLanguage;
+	
 	private HashMap<String, String> countryOptions;
-	 
+	private String[] operatingSystems; 
 	
 	public Student () {
 		this.countryOptions = new HashMap<String, String>();
@@ -53,6 +56,22 @@ public class Student {
 //not needed for setting because i do it in the constructor
 	public void setCountryOptions(HashMap<String, String> countryOptions) {
 		this.countryOptions = countryOptions;
+	}
+
+	public String getProgrammingLanguage() {
+		return programmingLanguage;
+	}
+
+	public void setProgrammingLanguage(String programmingLanguage) {
+		this.programmingLanguage = programmingLanguage;
+	}
+
+	public String[] getOperatingSystems() {
+		return operatingSystems;
+	}
+
+	public void setOperatingSystems(String[] operatingSystems) {
+		this.operatingSystems = operatingSystems;
 	}
 
 	
