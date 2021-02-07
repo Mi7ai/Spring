@@ -22,6 +22,10 @@
 		<form:errors path="freePasses" cssClass="error"/>
 		<br/>
 		
+		Postal Code: <form:input path="postalCode" value="12345"/>
+		<form:errors path="postalCode" cssClass="error"/>
+		<br/>
+		
 		<br/>
 		<input type="submit" name="Submit" value="Submit" />
 	</form:form>

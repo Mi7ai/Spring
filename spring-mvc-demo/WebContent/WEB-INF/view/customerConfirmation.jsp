@@ -6,7 +6,9 @@
 </head>
 <body>
 	<h2>CustomerPage</h2>
+	<p><a href="/spring-mvc-demo">Main Page</a></p>
 	<p>Customer: ${customer.firstName} ${customer.lastName}</p>
 	<p>Free Passes: ${customer.freePasses}</p>
+	<p>Free Passes: ${customer.postalCode}</p>
 </body>
 </html>
