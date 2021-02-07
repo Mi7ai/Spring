@@ -7,5 +7,6 @@
 <body>
 	<h2>CustomerPage</h2>
 	<p>Customer: ${customer.firstName} ${customer.lastName}</p>
+	<p>Free Passes: ${customer.freePasses}</p>
 </body>
 </html>
