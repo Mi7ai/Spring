@@ -9,6 +9,7 @@
 	<p><a href="/spring-mvc-demo">Main Page</a></p>
 	<p>Customer: ${customer.firstName} ${customer.lastName}</p>
 	<p>Free Passes: ${customer.freePasses}</p>
-	<p>Free Passes: ${customer.postalCode}</p>
+	<p>Postal Code: ${customer.postalCode}</p>
+	<p>Course Code: ${customer.courseCode}</p>
 </body>
 </html>
