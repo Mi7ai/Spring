@@ -4,7 +4,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class CreateStudent {
+public class ReadStudent {
 
 	public static void main(String[] args) {
 //		create session factory
@@ -19,22 +19,36 @@ public class CreateStudent {
 				
 		SessionFactory f = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class).buildSessionFactory();
 				
-		Session s = f.getCurrentSession();
+		Session ses = f.getCurrentSession();
 		
 		try {
 //			creating student object
-			System.out.println("Creating new student object.");
+			System.out.println("Reading student object");
 			Student s1 = new Student("Mihai","Wall","mihai@gmail.com");
 			
 //			start transaction
-			s.beginTransaction();
+			ses.beginTransaction();
 			
 //			save student object
 			System.out.println("Saving student object");
-			s.save(s1);
+			ses.save(s1);
 			
 //			commit transaction
-			s.getTransaction().commit();
+			ses.getTransaction().commit();
+			
+			
+
+			System.out.println("Saved student id:" +s1.getId());
+			
+			Session ses2 = f.getCurrentSession();
+			
+			ses2.beginTransaction();
+//			find student by id
+			Student s2 =  ses2.get(Student.class, s1.getId());
+//			check if is null if you want. s2 might be null
+			ses2.getTransaction().commit();
+			
+			System.out.println(s2);
 			System.out.println("Done");
 		} finally {
 			f.close();
