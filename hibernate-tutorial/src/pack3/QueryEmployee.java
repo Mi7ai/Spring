@@ -2,6 +2,8 @@ package pack3;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -24,8 +26,23 @@ public class QueryEmployee {
 			
 //			get employee by nametofind
 			System.out.println("Beginnind query");
-			Employee emp1 = s.createQuery("from Employee where firstName= :n", Employee.class).setParameter("n", nametofind).getSingleResult();
-			System.out.println(emp1);
+			try {
+				Employee emp1 = s.createQuery("from Employee where firstName= :n", Employee.class).setParameter("n", nametofind).getSingleResult();
+				System.out.println("Beginning search name: "+nametofind);
+				System.out.println(emp1);
+			} catch (Exception NoResultException) {
+				System.out.println("Employee not found");
+			}
+			
+			int idtofind = 3;
+			
+			try {
+				Employee emp2 = s.createQuery("from Employee where id= :n", Employee.class).setParameter("n", idtofind).getSingleResult();
+				System.out.println("Beginning search id: "+idtofind);
+				System.out.println(emp2);
+			} catch (Exception NoResultException) {
+				System.out.println("Employee not found");
+			}
 			
 //			commit transaction
 			s.getTransaction().commit();
