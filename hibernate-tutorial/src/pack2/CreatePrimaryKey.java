@@ -4,7 +4,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class CreateStudent {
+public class CreatePrimaryKey {
 
 	public static void main(String[] args) {
 //		create session factory
@@ -23,8 +23,11 @@ public class CreateStudent {
 		
 		try {
 //			creating student object
-			System.out.println("Creating new student object.");
-			Student s1 = new Student("Mihai","Wall","mihai@gmail.com");
+			System.out.println("Creating new student objects.");
+			Student s1 = new Student("Mihai","Sky","sky@gmail.com");
+			Student s2 = new Student("Mery","Public","public@gmail.com");
+			Student s3 = new Student("Fons","Money","money@gmail.com");
+			
 			
 //			start transaction
 			s.beginTransaction();
@@ -32,6 +35,8 @@ public class CreateStudent {
 //			save student object
 			System.out.println("Saving student object");
 			s.save(s1);
+			s.save(s2);
+			s.save(s3);
 			
 //			commit transaction
 			s.getTransaction().commit();
