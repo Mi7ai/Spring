@@ -12,7 +12,7 @@ public class CreateEmployee {
 		Session s = f.getCurrentSession();
 		
 		try {
-//			create employee object
+//			create employee array objects
 			Employee[] employees = {
 					new Employee("Django", "Unchained", "The big cricks"),
 					new Employee("Marco", "Polo", "The low streets"),
@@ -23,16 +23,14 @@ public class CreateEmployee {
 			};
 			
 			
-			
 //			start transaction
 			s.beginTransaction();
 			
-//			save employee to db
+//			save employees to db
 			for (Employee emp : employees) {
 				System.out.println("Creating employee: "+emp);
 				s.save(emp);
 			}
-			
 			
 //			commit transaction
 			s.getTransaction().commit();
