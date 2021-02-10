@@ -1,12 +1,6 @@
 package pack2;
 
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.query.Query;
-
-import java.util.List;
-
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -31,7 +25,7 @@ public class DeleteStudent {
 //			start transaction
 			ses.beginTransaction();
 			
-			int studentId = 1;
+//			int studentId = 1;
 			
 //			find student by id
 //			Student student1 = ses.get(Student.class, studentId);
