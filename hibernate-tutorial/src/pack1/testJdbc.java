@@ -3,8 +3,6 @@ package pack1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import com.mysql.cj.jdbc.Driver;
- 
 
 public class testJdbc {
 	public static void main(String[] args) {

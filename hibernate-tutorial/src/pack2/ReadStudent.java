@@ -35,16 +35,15 @@ public class ReadStudent {
 			
 //			commit transaction
 			ses.getTransaction().commit();
-			
-			
 
 			System.out.println("Saved student id:" +s1.getId());
-			
 			Session ses2 = f.getCurrentSession();
 			
 			ses2.beginTransaction();
+			
 //			find student by id
 			Student s2 =  ses2.get(Student.class, s1.getId());
+			
 //			check if is null if you want. s2 might be null
 			ses2.getTransaction().commit();
 			
