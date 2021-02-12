@@ -4,7 +4,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class DeleteInstructor {
+public class DeleteInstructorDetail {
 
 	public static void main(String[] args) {
 //		create session factory
@@ -29,16 +29,16 @@ public class DeleteInstructor {
 //			start transaction
 			s.beginTransaction();
 			
-			int idtofind = 1;
-//			delete instructor object: cascadetype.all
-			System.out.println("Deleting Instructor object with id: "+idtofind);
+			int idtofind = 2;
+//			delete instructor detail object: cascadetype.all to instructor
+			System.out.println("Deleting Instructor Detail object with id: "+idtofind);
 			try {
 //				finding instructor object
-				Instructor i1 = s.get(Instructor.class, idtofind);
-				s.delete(i1);
-				System.out.println(i1);
+				InstructorDetail id1 = s.get(InstructorDetail.class, idtofind);
+				s.delete(id1);
+				System.out.println(id1);
 			} catch (Exception e) {
-				System.out.println("Instructor not found");
+				System.out.println("Instructor Detail not found");
 			}
 			
 //			commit transaction
