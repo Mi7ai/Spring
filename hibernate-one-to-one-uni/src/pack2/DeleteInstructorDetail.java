@@ -29,12 +29,21 @@ public class DeleteInstructorDetail {
 //			start transaction
 			s.beginTransaction();
 			
-			int idtofind = 2;
+			int idtofind = 3;
 //			delete instructor detail object: cascadetype.all to instructor
 			System.out.println("Deleting Instructor Detail object with id: "+idtofind);
+			
+
+			
 			try {
+				
 //				finding instructor object
 				InstructorDetail id1 = s.get(InstructorDetail.class, idtofind);
+				
+//				break bi directiional link to delete only this object from db and 
+//				not to cascade to the instructor object
+				id1.getInstructor().setInstructorDetail(null);
+				
 				s.delete(id1);
 				System.out.println(id1);
 			} catch (Exception e) {
