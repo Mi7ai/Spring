@@ -1,6 +1,5 @@
 package pack1;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 
 
@@ -11,7 +10,7 @@ public class testJdbc {
 		String pass= "hbstudent";
 		try {
 			System.out.println("Connecting...");
-			Connection conn = DriverManager.getConnection(jdbcUrl,user,pass);
+			DriverManager.getConnection(jdbcUrl,user,pass);
 			System.out.println("Connected!!!");
 		} catch (Exception e) {
 			e.printStackTrace();
