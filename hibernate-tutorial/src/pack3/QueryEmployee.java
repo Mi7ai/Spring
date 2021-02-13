@@ -1,14 +1,9 @@
 package pack3;
 
 import java.util.List;
-
-import javax.persistence.NoResultException;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import pack2.Student;
 
 public class QueryEmployee {
 
