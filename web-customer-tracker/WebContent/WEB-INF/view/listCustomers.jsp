@@ -26,7 +26,7 @@
 					<th>Email</th>
 				</tr>
 				<!-- customer is the attribute from CustomerController  -->
-				<c:forEach var="tempCustomer" items="$(customers)">
+				<c:forEach var="tempCustomer" items="${customers}">
 					<tr>
 						<td>${tempCustomer.firstName}</td>
 						<td>${tempCustomer.lastName}</td>
