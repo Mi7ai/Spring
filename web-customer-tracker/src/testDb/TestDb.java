@@ -1,4 +1,4 @@
-package pack1;
+package testDb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
