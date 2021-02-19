@@ -28,6 +28,10 @@
 
 
 	<div id="container">
+		<div class="mb-3">
+			<input type="button" class="btn btn-primary" value="Add Customer" onclick="window.location.href='showFormForAdd;return false;'"/>	
+		</div>
+		
 		<table class="table table-bordered">
 			<thead>
 				<tr>
