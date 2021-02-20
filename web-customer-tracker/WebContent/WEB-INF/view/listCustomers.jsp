@@ -38,16 +38,21 @@
 					<th scope="col">First Name</th>
 					<th scope="col">Last Name</th>
 					<th scope="col">Email</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<!-- customer is the attribute from CustomerController  -->
 				<c:forEach var="tempCustomer" items="${customers}">
+					<c:url var="updateLink" value="/customer/showFormForUpdate">
+						<c:param name="customerId" value="${tempCustomer.id}" />
+					</c:url>
+					
 					<tr class="table-primary">
 						<td>${tempCustomer.firstName}</td>
 						<td>${tempCustomer.lastName}</td>
 						<td>${tempCustomer.email}</td>
-					</tr>
+						<td><a class="btn btn-warning" href="${updateLink}" role="button">Update Customer</a></td>
 				</c:forEach>
 			</tbody>
 		</table>

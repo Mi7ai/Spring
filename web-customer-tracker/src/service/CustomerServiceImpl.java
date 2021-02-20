@@ -21,7 +21,6 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> getCustomers() {
 //		delegate call to DAO
 		return customerDAO.getCustomers();
-		
 	}
 
 
@@ -30,5 +29,20 @@ public class CustomerServiceImpl implements CustomerService {
 	public void saveCustomer(Customer theCustomer) {
 		customerDAO.saveCustomer(theCustomer);
 	}
+
+
+	@Override
+	@Transactional
+	public Customer getCustomer(int theId) {
+		return customerDAO.getCustomer(theId);
+	}
+
+
+	@Override
+	@Transactional
+	public void updateCustomer(Customer theCustomer) {
+		customerDAO.updateCustomer(theCustomer);
+	}
+
 
 }
