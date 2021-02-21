@@ -39,6 +39,7 @@
 					<th scope="col">Last Name</th>
 					<th scope="col">Email</th>
 					<th scope="col">Action</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,11 +49,17 @@
 						<c:param name="customerId" value="${tempCustomer.id}" />
 					</c:url>
 					
+					<c:url var="deleteLink" value="/customer/delete">
+						<c:param name="customerId" value="${tempCustomer.id}" />
+					</c:url>
+					
 					<tr class="table-primary">
 						<td>${tempCustomer.firstName}</td>
 						<td>${tempCustomer.lastName}</td>
 						<td>${tempCustomer.email}</td>
 						<td><a class="btn btn-warning" href="${updateLink}" role="button">Update Customer</a></td>
+						<td><a class="btn btn-warning" href="${deleteLink}" role="button"
+						onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete Customer</a></td>
 				</c:forEach>
 			</tbody>
 		</table>
