@@ -1,5 +1,8 @@
 @charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
 body{
 	background-color:#096f84; 
+	font-family: 'Dosis', sans-serif;
+	font-size: 25px;
 }
