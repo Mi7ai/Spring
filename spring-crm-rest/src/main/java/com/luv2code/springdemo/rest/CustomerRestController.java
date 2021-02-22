@@ -27,6 +27,10 @@ public class CustomerRestController {
 	public Customer getCustomer(@PathVariable int customerId) {
 		Customer c = cs.getCustomer(customerId);
 		
+		if (c == null) {
+			throw new CustomerNotFoundException("Customer id not found "+customerId);
+		}
+		
 		return c;
 	}
 }
