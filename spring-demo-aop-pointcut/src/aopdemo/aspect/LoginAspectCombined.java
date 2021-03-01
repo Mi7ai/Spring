@@ -9,16 +9,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoginAspectCombined {
 	 
-	@Pointcut("execution(* aopdemo.*.*(..))")
+	@Pointcut("execution(* aopdemo..*.*(..))")
 	private void login() {}
 	
-	@Pointcut("execution(* aopdemo.*.get*(..))")
+	@Pointcut("execution(* aopdemo..*.get*(..))")
 	private void getter() {}
 	
-	@Pointcut("execution(* aopdemo.*.set*(..))")
+	@Pointcut("execution(* aopdemo..*.set*(..))")
 	private void setter() {}
 	
-	@Pointcut("login() %% !(getter() || setter())")
+	@Pointcut("login() && !(getter() || setter())")
 	private void noGetterSetter() {}
 	
 	@Before("noGetterSetter()")
