@@ -5,8 +5,8 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class LoginAspectCombined {
 	 
 	@Pointcut("execution(* aopdemo..*.*(..))")
@@ -23,7 +23,7 @@ public class LoginAspectCombined {
 	
 	@Before("noGetterSetter()")
 	public void beforeLoginAspect() {
-		System.out.println("Fuck off login aspect 2");
+		System.out.println("Login aspect 2");
 	}
 
 }

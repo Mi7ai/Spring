@@ -17,12 +17,12 @@ public class LoginAspect {
 //	this uses the declaration defines in login method
 	@Before("login()")
 	public void beforeLoginAspect() {
-		System.out.println("Fuck you from login aspect before addAcount");
+		System.out.println("Login aspect 1: before addAcount");
 	}
 	
 	@Before("login()")
 	public void apiAnalytics() {
-		System.out.println("Calling api analytics");
+		System.out.println("Calling API Analytics 1");
 	}
 	
 	
