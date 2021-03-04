@@ -14,7 +14,7 @@ import aopdemo.Account;
 public class AfterReturningAspect {
 	
 	@AfterReturning(pointcut = ("aopdemo.aspect.AopExpressions.findAccounts()"),returning = "result")
-	public void afterFindAccountsAspect(JoinPoint theJP, List<Account> result) {
+	public void afterReturningFindAccountsAspect(JoinPoint theJP, List<Account> result) {
 		String method = theJP.getSignature().toShortString();
 		
 		System.out.println("Executing after returning method: "+method);
