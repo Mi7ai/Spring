@@ -15,7 +15,7 @@ public class MainDemoAppAfterFinally {
 		
 		List<Account> theAccounts = null;
 		try {
-			boolean flag = false;
+			boolean flag = true;
 			theAccounts = ac.findAccounts(flag);
 		} catch (Exception e) {
 			System.out.println(e);
