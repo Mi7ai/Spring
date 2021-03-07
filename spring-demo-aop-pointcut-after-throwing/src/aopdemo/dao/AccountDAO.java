@@ -3,7 +3,6 @@ package aopdemo.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
 
 import org.springframework.stereotype.Component;
 
