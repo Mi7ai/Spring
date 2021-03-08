@@ -61,7 +61,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public void deleteCustomer(int theId) {
 //		get hibernate session
 		Session s = f.getCurrentSession(); 
-//		Customer.class is not nedeed because the return type of the query is not specific
+//		Customer.class is not needed because the return type of the query is not specific
 //		if added it will output and error like "queries cannot be typed"
 		Query q = s.createQuery("delete from Customer where id=:n");
 		q.setParameter("n", theId);
