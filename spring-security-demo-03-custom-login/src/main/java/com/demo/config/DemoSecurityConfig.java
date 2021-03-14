@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
-import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 
 @Configuration
 @EnableWebSecurity
@@ -34,7 +33,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		.formLogin()
 			.loginPage("/loginPage")
 			.loginProcessingUrl("/authenticateTheUser")
-			.permitAll();
+			.permitAll()
+		.and()
+		.logout().permitAll();
 	}
 
 }

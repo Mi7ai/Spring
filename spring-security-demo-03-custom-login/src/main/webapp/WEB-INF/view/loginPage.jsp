@@ -23,15 +23,21 @@
 		<c:if test="${param.error != null}">
 			<div class="text-danger">Sorry! You entered invalid username/password.</div>
 		</c:if>
+		
+		<!-- Check for logout error -->
+
+		<c:if test="${param.logout != null}">
+			<div class="text-primary">You have been logged out!</div>
+		</c:if>
 
 		<div class="mb-3">
 			<label for="exampleInputName" class="form-label" >User name: </label>
-			<input type="text" placeholder="Username" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+			<input type="text" name="username" placeholder="Username" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
 		</div>
 		
 		<div class="mb-3">
 			<label for="exampleInputPass" class="form-label">Password: </label>
-			<input type="password" placeholder="Password" class="form-control" id="exampleInputPass" aria-describedby="passHelp">
+			<input type="password" name="password" placeholder="Password" class="form-control" id="exampleInputPass" aria-describedby="passHelp">
 		</div>
 	 
 		<button type="submit" class="btn btn-primary">Submit</button>
