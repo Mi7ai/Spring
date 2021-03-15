@@ -16,7 +16,7 @@
 <body>
 	<h1 class="text-center">Hi from Login</h1>
 
-	<form:form class="container" action="${pageContext.request.contextPath}/authenticateTheUser"
+	<form class="container" action="${pageContext.request.contextPath}/authenticateTheUser"
 		method="POST">
 		<!-- Check for login error -->
 
@@ -41,8 +41,9 @@
 		</div>
 	 
 		<button type="submit" class="btn btn-primary">Submit</button>
-		
+		<!-- Added manual csrf -->
+		<!-- Deleted form:>>>form tags -->
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-	</form:form>
+	</form>
 </body>
 </html>
