@@ -13,15 +13,21 @@
 	<h1>Hi from Home</h1>
 	<h3>User: <security:authentication property="principal.username" /></h3>
 	<h3>Role(s): <security:authentication property="principal.authorities" /></h3>
-	<!-- Add link to managers -->
-	<div class="container">
-		<a href="${pageContext.request.contextPath}/leaders">Leadership</a>
-	</div>
-
-	<!-- Add link to admins -->
-	<div class="container">
-		<a>Admins</a>
-	</div>
+	
+	<security:authorize access="hasRole('manager')">
+		<!-- Add link to managers only -->
+		<div class="container">
+			<a href="${pageContext.request.contextPath}/leaders">Leadership</a>
+		</div>
+	</security:authorize>
+	
+	<security:authorize access="hasRole('admin')">
+		<!-- Add link to admins only -->
+		<div class="container">
+			<a href="${pageContext.request.contextPath}/systems">Administration</a>
+		</div>
+	</security:authorize>
+	
 	<form:form class="container" action="${pageContext.request.contextPath}/logout"
 		method="POST">
 

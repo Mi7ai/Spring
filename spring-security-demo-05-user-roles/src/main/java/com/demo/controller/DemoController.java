@@ -14,4 +14,9 @@ public class DemoController {
 	public String leaders() {
 		return "leaders";
 	}
+	
+	@RequestMapping("/systems")
+	public String systems() {
+		return "systems";
+	}
 }
