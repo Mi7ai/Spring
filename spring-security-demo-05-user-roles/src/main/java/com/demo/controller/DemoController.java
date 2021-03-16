@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DemoController {
 	@RequestMapping("/")
 	public String index() {
-		
 		return "index";
+	}
+	
+	@RequestMapping("/leaders")
+	public String leaders() {
+		return "leaders";
 	}
 }

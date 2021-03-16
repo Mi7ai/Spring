@@ -13,6 +13,15 @@
 	<h1>Hi from Home</h1>
 	<h3>User: <security:authentication property="principal.username" /></h3>
 	<h3>Role(s): <security:authentication property="principal.authorities" /></h3>
+	<!-- Add link to managers -->
+	<div class="container">
+		<a href="${pageContext.request.contextPath}/leaders">Leadership</a>
+	</div>
+
+	<!-- Add link to admins -->
+	<div class="container">
+		<a>Admins</a>
+	</div>
 	<form:form class="container" action="${pageContext.request.contextPath}/logout"
 		method="POST">
 
