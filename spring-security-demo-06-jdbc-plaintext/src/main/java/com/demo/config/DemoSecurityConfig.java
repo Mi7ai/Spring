@@ -1,36 +1,35 @@
 package com.demo.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.User.UserBuilder;
 
 @Configuration
 @EnableWebSecurity
+@ComponentScan(basePackages = "com.demo.")
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
-
+	@Autowired
+	private DataSource ds;
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-//		not to worry, is just for demo purpose
-		UserBuilder users = User.withDefaultPasswordEncoder();
-		
-		auth.inMemoryAuthentication()
-		.withUser(users.username("Mike").password("ike").roles("employee"))
-		.withUser(users.username("Charlie").password("harlie").roles("employee","admin"))
-		.withUser(users.username("John").password("ohn").roles("employee","manager"))
-		;
+//		use jdbc auth insted of hard coding
+		auth.jdbcAuthentication().dataSource(ds);
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/").hasRole("employee")
-			.antMatchers("/leaders/**").hasRole("manager")
-			.antMatchers("/systems/**").hasRole("admin")
+			.antMatchers("/").hasRole("EMPLOYEE")
+			.antMatchers("/leaders/**").hasRole("MANAGER")
+			.antMatchers("/systems/**").hasRole("ADMIN")
 		.and()
 		.formLogin()
 			.loginPage("/loginPage")

@@ -14,14 +14,14 @@
 	<h3>User: <security:authentication property="principal.username" /></h3>
 	<h3>Role(s): <security:authentication property="principal.authorities" /></h3>
 	
-	<security:authorize access="hasRole('manager')">
+	<security:authorize access="hasRole('MANAGER')">
 		<!-- Add link to managers only -->
 		<div class="container">
 			<a href="${pageContext.request.contextPath}/leaders">Leadership</a>
 		</div>
 	</security:authorize>
 	
-	<security:authorize access="hasRole('admin')">
+	<security:authorize access="hasRole('ADMIN')">
 		<!-- Add link to admins only -->
 		<div class="container">
 			<a href="${pageContext.request.contextPath}/systems">Administration</a>
