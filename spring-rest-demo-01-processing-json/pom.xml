@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.demo</groupId>
-	<artifactId>spring-rest-demo-01-procesing-json</artifactId>
+	<artifactId>spring-rest-demo-01-processing-json</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
