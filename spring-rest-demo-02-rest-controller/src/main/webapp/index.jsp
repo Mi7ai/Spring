@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>Welcome to SPRING REST DEMO HOME</h1>
-	<a href="greet/hello">Go to Hello</a>
+	<p><a href="greet/hello">Go to Hello</a></p>
+	<p><a href="api/students">Get all Students</a></p>
 </body>
 </html>
