@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.dao;
+package com.demo.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springdemo.entity.Customer;
+import com.demo.entity.Customer;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
@@ -24,9 +24,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 				
 		// create a query  ... sort by last name
-		Query<Customer> theQuery = 
-				currentSession.createQuery("from Customer order by lastName",
-											Customer.class);
+		Query<Customer> theQuery = currentSession.createQuery("from Customer order by lastName", Customer.class);
 		
 		// execute query and get result list
 		List<Customer> customers = theQuery.getResultList();
