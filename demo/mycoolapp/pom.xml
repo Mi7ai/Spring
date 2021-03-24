@@ -8,10 +8,11 @@
 		<version>2.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.example</groupId>
-	<artifactId>mycoolapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mycoolapp</name>
+	<artifactId>spring-boot-demo-01</artifactId>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>15</java.version>
@@ -38,4 +39,5 @@
 		</plugins>
 	</build>
 
+	
 </project>
