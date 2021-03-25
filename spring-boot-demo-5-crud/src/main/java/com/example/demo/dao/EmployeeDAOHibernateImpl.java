@@ -3,7 +3,6 @@ package com.example.demo.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -23,7 +22,6 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 
 
 	@Override
-	@Transactional
 	public List<Employee> findAll() {
 		Session cs = em.unwrap(Session.class);
 		
@@ -32,6 +30,34 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 		List<Employee> employees = q.getResultList();
 		
 		return employees;
+	}
+
+	@Override
+	public Employee findById(int id) {
+		Session cs = em.unwrap(Session.class);
+		
+		Employee emp= cs.get(Employee.class, id);
+		 
+		return emp;
+	}
+
+
+	@Override
+	public void save(Employee employee) {
+		Session cs = em.unwrap(Session.class);
+//		if id is=0 save/insert else update
+		cs.saveOrUpdate(employee);
+	}
+
+
+	@Override
+	public void deleteById(int id) {
+		Session cs = em.unwrap(Session.class);
+
+		Query q = cs.createQuery("delete from Employee where id=:param");
+		q.setParameter("param", id);
+		
+		q.executeUpdate();
 	}
 
 }
