@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public List<Employee> findAll() {
-		return erepo.findAll();
+		return erepo.findAllByOrderByLastNameAsc();
 	}
 
 	@Override
